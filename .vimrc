@@ -8,6 +8,7 @@ set mouse=a
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
+set laststatus=2
 set foldenable 
 set visualbell
 set number
@@ -31,14 +32,28 @@ if &term =~ '256color'
 	set t_ut=
 endif
 
+execute pathogen#infect()
 let mapleader=","
 let g:gundo_prefer_python3 = 1
-execute pathogen#infect()
+let g:gitgutter_terminal_reports_focus=0
+let g:gitgutter_map_keys = 0
+autocmd BufWritePost * GitGutter
 map <leader>n :NERDTreeToggle<CR>
 map <leader>p :CtrlP<CR>
 map <leader>P :CtrlPMRU<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader><space> :nohlsearch<CR>
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 """ SCRIPTS AND CUSTOM FUNCS
 
