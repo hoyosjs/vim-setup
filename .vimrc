@@ -23,7 +23,6 @@ set splitbelow
 
 filetype indent on
 syntax enable
-colorscheme gruvbox
 
 if &term =~ '256color'
 	" disable Background Color Erase (BCE) so that color schemes
@@ -33,6 +32,7 @@ if &term =~ '256color'
 endif
 
 execute pathogen#infect()
+colorscheme gruvbox
 let mapleader=","
 let g:gundo_prefer_python3 = 1
 let g:gitgutter_terminal_reports_focus=0
