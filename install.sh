@@ -5,6 +5,9 @@ AUTO_DIR="$HOME/.vim/autoload"
 
 command -v vim > /dev/null 2>&1 || { echo >&2 "VIM Required but not in path. Aborting."; exit 1; }
 
+# Copy vimrc to home.
+cp .vimrc $HOME
+
 # Get vim pathogen
 mkdir -p $AUTO_DIR && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
