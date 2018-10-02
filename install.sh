@@ -1,5 +1,5 @@
 #!/bin/bash
-EXTENSIONS_FILE="extension_list"
+EXTENSIONS_FILE="extension_list.ext"
 EXT_DIR="$HOME/.vim/bundle"
 AUTO_DIR="$HOME/.vim/autoload"
 

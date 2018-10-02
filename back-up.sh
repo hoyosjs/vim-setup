@@ -5,7 +5,7 @@ cp ~/.vimrc .
 
 # Backup extensions
 EXTENSION_DIR_LIST=`ls -1 -d ~/.vim/bundle/*`
-FILE_LIST_REPO="extension_list"
+FILE_LIST_REPO="extension_list.ext"
 [[ -f $FILE_LIST_REPO ]] && rm $FILE_LIST_REPO
 
 for EXTENSION_DIR in $EXTENSION_DIR_LIST; do
