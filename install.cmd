@@ -1,9 +1,9 @@
 @if not defined _echo @echo off
 setlocal EnableDelayedExpansion EnableExtensions
 
-set EXTENSIONS_FILE="extension_list.ext"
-set EXT_DIR="%HOME%\vimfiles\bundle"
-set AUTO_DIR="%HOME%\vimfiles\autoload"
+set EXTENSIONS_FILE=extension_list.ext
+set EXT_DIR=%HOME%\vimfiles\bundle
+set AUTO_DIR=%HOME%\vimfiles\autoload
 
 :: TODO: Check vim availability.
 
@@ -24,7 +24,7 @@ IF NOT EXIST "%EXTENSIONS_FILE%" (
 
 set SCRIPT_DIR=%~dp0
 pushd %EXT_DIR%
-for /F "tokens=*" %%LINE in ("%SCRIPT_DIR%\%EXTENSIONS_FILE%") do (
-    echo %%LINE
+for /f "tokens=*" %%a in (%SCRIPT_DIR%%EXTENSIONS_FILE%) do (
+    call %%a
 )
 popd
