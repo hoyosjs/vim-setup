@@ -1,3 +1,4 @@
 *.sh text eol=lf
 *.ext text eol=lf
-.vimrc text eol=lf
+.vimrc text eol=crlf
+*.cmd text eol=crlf
