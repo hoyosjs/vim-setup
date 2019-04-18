@@ -1,5 +1,5 @@
 @if not defined _echo @echo off
-setlocal EnableDelayedExpansion EnableExtensions
+setlocal EnableExtensions EnableDelayedExpansion
 
 set EXTENSIONS_FILE=extension_list.ext
 set EXT_DIR=%HOME%\vimfiles\bundle
@@ -25,6 +25,6 @@ IF NOT EXIST "%EXTENSIONS_FILE%" (
 set SCRIPT_DIR=%~dp0
 pushd %EXT_DIR%
 for /f "tokens=*" %%a in (%SCRIPT_DIR%%EXTENSIONS_FILE%) do (
-    call %%a
+    call %%a 2> null || echo Failed to get extension provided by %%a. Check connectivity, repo, and previous installation.
 )
 popd
