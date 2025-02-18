@@ -2,13 +2,13 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 set EXTENSIONS_FILE=extension_list.ext
-set EXT_DIR=%HOME%\vimfiles\bundle
-set AUTO_DIR=%HOME%\vimfiles\autoload
+set "EXT_DIR=%USERPROFILE%\vimfiles\bundle"
+set "AUTO_DIR=%USERPROFILE%\vimfiles\autoload"
 
 :: TODO: Check vim availability.
 
-:: Copy vimrc to home.
-copy .vimrc "%HOME%\_vimrc"
+:: Copy vimrc to USERPROFILE.
+copy .vimrc "%USERPROFILE%\_vimrc"
 
 :: Get vim pathogen
 md "%AUTO_DIR%" "%EXT_DIR%" 2> nul
